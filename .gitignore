@@ -1,0 +1,4 @@
+./vscode/*
+*.kernel
+*.bin
+*.iso
