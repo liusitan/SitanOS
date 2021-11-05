@@ -1,0 +1,33 @@
+notes
+software requirement: 
+sudo apt-get install g++
+sudo apt-get install binutils
+sudo apt-get install libc6-dev-i386
+1. how the operating system boots
+ Mainboard < bios, harddrive, CPU> 
+ You need to know some assembly
+ cpu<ax bx esp ps>
+ 1.from bios to the ram then tells the instruction point at the first line of the bios.
+ 2.the cpu begins to execute
+ 3.cpu access the harddrive, and load the bootloader, it knows the file system, partition. it goes to the /boot/grub/grub.cfg. Entry fro linux and mint.
+ 4.the bootlloader will print the list of the operating systems in the screen. 
+ 5.load pointed /boot/kernelbin to the kernel 
+ 6.bootloader can not dynamically load the kernel bin because c++ expects the address to be generated at compile time instead of the real time.  
+ 7.loader.s -> loader.o, kernel.cpp -> kernel.o
+ 8. cpu will start at the 32bit mode. 
+ 
+ boot loader need a magic number to understand that file is kernel
+ https://stackoverflow.com/questions/1125025/what-is-the-role-of-magic-number-in-boot-loading-in-linux
+
+ https://www.gnu.org/software/grub/manual/multiboot/multiboot.html 3.1.2
+
+
+ multioboot structgure in the ram
+ size of ram, 
+ stores a pointer to the $ax register
+ stores the magic number to the $bx register
+ coould use the multiboot.h to restore the info in multiple structgure
+
+no printf have to write my own printf; 
+nede to get rid of the dependency on linux
+GPPPARAMS = -m32 -fno-use-cxa-atexit memory mangement -nostdlib no glibc -fno-builtin -fno-rtti runtime type identification -fno-exceptions -fno-leading-underscore

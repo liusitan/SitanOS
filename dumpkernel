@@ -1,0 +1,2010 @@
+
+kernel.o:     file format elf32-i386
+
+
+Disassembly of section .group:
+
+00000000 <.group>:
+   0:	01 00                	add    %eax,(%eax)
+   2:	00 00                	add    %al,(%eax)
+   4:	08 00                	or     %al,(%eax)
+	...
+
+Disassembly of section .group:
+
+00000000 <.group>:
+   0:	01 00                	add    %eax,(%eax)
+   2:	00 00                	add    %al,(%eax)
+   4:	09 00                	or     %eax,(%eax)
+	...
+
+Disassembly of section .text:
+
+00000000 <_Z6printfPKc>:
+   0:	f3 0f 1e fb          	endbr32 
+   4:	55                   	push   %ebp
+   5:	89 e5                	mov    %esp,%ebp
+   7:	53                   	push   %ebx
+   8:	83 ec 10             	sub    $0x10,%esp
+   b:	e8 fc ff ff ff       	call   c <_Z6printfPKc+0xc>
+  10:	05 01 00 00 00       	add    $0x1,%eax
+  15:	c7 45 f8 00 00 00 00 	movl   $0x0,-0x8(%ebp)
+  1c:	8b 4d f8             	mov    -0x8(%ebp),%ecx
+  1f:	8b 55 08             	mov    0x8(%ebp),%edx
+  22:	01 ca                	add    %ecx,%edx
+  24:	0f b6 12             	movzbl (%edx),%edx
+  27:	84 d2                	test   %dl,%dl
+  29:	74 44                	je     6f <_Z6printfPKc+0x6f>
+  2b:	8b 90 00 00 00 00    	mov    0x0(%eax),%edx
+  31:	8b 4d f8             	mov    -0x8(%ebp),%ecx
+  34:	01 c9                	add    %ecx,%ecx
+  36:	01 ca                	add    %ecx,%edx
+  38:	0f b7 12             	movzwl (%edx),%edx
+  3b:	66 85 d2             	test   %dx,%dx
+  3e:	0f 95 c2             	setne  %dl
+  41:	0f b6 ca             	movzbl %dl,%ecx
+  44:	8b 5d f8             	mov    -0x8(%ebp),%ebx
+  47:	8b 55 08             	mov    0x8(%ebp),%edx
+  4a:	01 da                	add    %ebx,%edx
+  4c:	0f b6 12             	movzbl (%edx),%edx
+  4f:	66 0f be d2          	movsbw %dl,%dx
+  53:	89 cb                	mov    %ecx,%ebx
+  55:	09 d3                	or     %edx,%ebx
+  57:	8b 90 00 00 00 00    	mov    0x0(%eax),%edx
+  5d:	8b 4d f8             	mov    -0x8(%ebp),%ecx
+  60:	01 c9                	add    %ecx,%ecx
+  62:	01 ca                	add    %ecx,%edx
+  64:	89 d9                	mov    %ebx,%ecx
+  66:	66 89 0a             	mov    %cx,(%edx)
+  69:	83 45 f8 01          	addl   $0x1,-0x8(%ebp)
+  6d:	eb ad                	jmp    1c <_Z6printfPKc+0x1c>
+  6f:	90                   	nop
+  70:	83 c4 10             	add    $0x10,%esp
+  73:	5b                   	pop    %ebx
+  74:	5d                   	pop    %ebp
+  75:	c3                   	ret    
+
+00000076 <kernelMain>:
+  76:	f3 0f 1e fb          	endbr32 
+  7a:	55                   	push   %ebp
+  7b:	89 e5                	mov    %esp,%ebp
+  7d:	53                   	push   %ebx
+  7e:	e8 fc ff ff ff       	call   7f <kernelMain+0x9>
+  83:	81 c3 02 00 00 00    	add    $0x2,%ebx
+  89:	8d 83 00 00 00 00    	lea    0x0(%ebx),%eax
+  8f:	50                   	push   %eax
+  90:	e8 fc ff ff ff       	call   91 <kernelMain+0x1b>
+  95:	83 c4 04             	add    $0x4,%esp
+  98:	eb ef                	jmp    89 <kernelMain+0x13>
+
+Disassembly of section .data:
+
+00000000 <_ZZ6printfPKcE8videomem>:
+   0:	00                   	.byte 0x0
+   1:	80 0b 00             	orb    $0x0,(%ebx)
+
+Disassembly of section .rodata:
+
+00000000 <.rodata>:
+   0:	48                   	dec    %eax
+   1:	65 6c                	gs insb (%dx),%es:(%edi)
+   3:	6c                   	insb   (%dx),%es:(%edi)
+   4:	6f                   	outsl  %ds:(%esi),(%dx)
+   5:	20 73 69             	and    %dh,0x69(%ebx)
+   8:	74 61                	je     6b <.rodata+0x6b>
+   a:	6e                   	outsb  %ds:(%esi),(%dx)
+   b:	2c 20                	sub    $0x20,%al
+   d:	49                   	dec    %ecx
+   e:	20 61 6d             	and    %ah,0x6d(%ecx)
+  11:	20 79 6f             	and    %bh,0x6f(%ecx)
+  14:	75 72                	jne    88 <.rodata+0x88>
+  16:	20 6b 65             	and    %ch,0x65(%ebx)
+  19:	72 6e                	jb     89 <.rodata+0x89>
+  1b:	65 6c                	gs insb (%dx),%es:(%edi)
+  1d:	20 77 72             	and    %dh,0x72(%edi)
+  20:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+  27:	79 
+  28:	20 79 6f             	and    %bh,0x6f(%ecx)
+  2b:	75 21                	jne    4e <.rodata+0x4e>
+  2d:	2f                   	das    
+  2e:	2f                   	das    
+  2f:	2f                   	das    
+  30:	2f                   	das    
+  31:	2f                   	das    
+  32:	2f                   	das    
+  33:	2f                   	das    
+  34:	2f                   	das    
+  35:	2f                   	das    
+  36:	2f                   	das    
+  37:	2f                   	das    
+  38:	2f                   	das    
+  39:	2f                   	das    
+  3a:	2f                   	das    
+  3b:	2f                   	das    
+  3c:	2f                   	das    
+  3d:	2f                   	das    
+  3e:	48                   	dec    %eax
+  3f:	65 6c                	gs insb (%dx),%es:(%edi)
+  41:	6c                   	insb   (%dx),%es:(%edi)
+  42:	6f                   	outsl  %ds:(%esi),(%dx)
+  43:	20 73 69             	and    %dh,0x69(%ebx)
+  46:	74 61                	je     a9 <.rodata+0xa9>
+  48:	6e                   	outsb  %ds:(%esi),(%dx)
+  49:	2c 20                	sub    $0x20,%al
+  4b:	49                   	dec    %ecx
+  4c:	20 61 6d             	and    %ah,0x6d(%ecx)
+  4f:	20 79 6f             	and    %bh,0x6f(%ecx)
+  52:	75 72                	jne    c6 <.rodata+0xc6>
+  54:	20 6b 65             	and    %ch,0x65(%ebx)
+  57:	72 6e                	jb     c7 <.rodata+0xc7>
+  59:	65 6c                	gs insb (%dx),%es:(%edi)
+  5b:	20 77 72             	and    %dh,0x72(%edi)
+  5e:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+  65:	79 
+  66:	20 79 6f             	and    %bh,0x6f(%ecx)
+  69:	75 21                	jne    8c <.rodata+0x8c>
+  6b:	2f                   	das    
+  6c:	2f                   	das    
+  6d:	2f                   	das    
+  6e:	2f                   	das    
+  6f:	2f                   	das    
+  70:	2f                   	das    
+  71:	2f                   	das    
+  72:	2f                   	das    
+  73:	2f                   	das    
+  74:	2f                   	das    
+  75:	2f                   	das    
+  76:	2f                   	das    
+  77:	2f                   	das    
+  78:	2f                   	das    
+  79:	2f                   	das    
+  7a:	2f                   	das    
+  7b:	2f                   	das    
+  7c:	48                   	dec    %eax
+  7d:	65 6c                	gs insb (%dx),%es:(%edi)
+  7f:	6c                   	insb   (%dx),%es:(%edi)
+  80:	6f                   	outsl  %ds:(%esi),(%dx)
+  81:	20 73 69             	and    %dh,0x69(%ebx)
+  84:	74 61                	je     e7 <.rodata+0xe7>
+  86:	6e                   	outsb  %ds:(%esi),(%dx)
+  87:	2c 20                	sub    $0x20,%al
+  89:	49                   	dec    %ecx
+  8a:	20 61 6d             	and    %ah,0x6d(%ecx)
+  8d:	20 79 6f             	and    %bh,0x6f(%ecx)
+  90:	75 72                	jne    104 <.rodata+0x104>
+  92:	20 6b 65             	and    %ch,0x65(%ebx)
+  95:	72 6e                	jb     105 <.rodata+0x105>
+  97:	65 6c                	gs insb (%dx),%es:(%edi)
+  99:	20 77 72             	and    %dh,0x72(%edi)
+  9c:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+  a3:	79 
+  a4:	20 79 6f             	and    %bh,0x6f(%ecx)
+  a7:	75 21                	jne    ca <.rodata+0xca>
+  a9:	2f                   	das    
+  aa:	2f                   	das    
+  ab:	2f                   	das    
+  ac:	2f                   	das    
+  ad:	2f                   	das    
+  ae:	2f                   	das    
+  af:	2f                   	das    
+  b0:	2f                   	das    
+  b1:	2f                   	das    
+  b2:	2f                   	das    
+  b3:	2f                   	das    
+  b4:	2f                   	das    
+  b5:	2f                   	das    
+  b6:	2f                   	das    
+  b7:	2f                   	das    
+  b8:	2f                   	das    
+  b9:	2f                   	das    
+  ba:	48                   	dec    %eax
+  bb:	65 6c                	gs insb (%dx),%es:(%edi)
+  bd:	6c                   	insb   (%dx),%es:(%edi)
+  be:	6f                   	outsl  %ds:(%esi),(%dx)
+  bf:	20 73 69             	and    %dh,0x69(%ebx)
+  c2:	74 61                	je     125 <.rodata+0x125>
+  c4:	6e                   	outsb  %ds:(%esi),(%dx)
+  c5:	2c 20                	sub    $0x20,%al
+  c7:	49                   	dec    %ecx
+  c8:	20 61 6d             	and    %ah,0x6d(%ecx)
+  cb:	20 79 6f             	and    %bh,0x6f(%ecx)
+  ce:	75 72                	jne    142 <.rodata+0x142>
+  d0:	20 6b 65             	and    %ch,0x65(%ebx)
+  d3:	72 6e                	jb     143 <.rodata+0x143>
+  d5:	65 6c                	gs insb (%dx),%es:(%edi)
+  d7:	20 77 72             	and    %dh,0x72(%edi)
+  da:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+  e1:	79 
+  e2:	20 79 6f             	and    %bh,0x6f(%ecx)
+  e5:	75 21                	jne    108 <.rodata+0x108>
+  e7:	2f                   	das    
+  e8:	2f                   	das    
+  e9:	2f                   	das    
+  ea:	2f                   	das    
+  eb:	2f                   	das    
+  ec:	2f                   	das    
+  ed:	2f                   	das    
+  ee:	2f                   	das    
+  ef:	2f                   	das    
+  f0:	2f                   	das    
+  f1:	2f                   	das    
+  f2:	2f                   	das    
+  f3:	2f                   	das    
+  f4:	2f                   	das    
+  f5:	2f                   	das    
+  f6:	2f                   	das    
+  f7:	2f                   	das    
+  f8:	48                   	dec    %eax
+  f9:	65 6c                	gs insb (%dx),%es:(%edi)
+  fb:	6c                   	insb   (%dx),%es:(%edi)
+  fc:	6f                   	outsl  %ds:(%esi),(%dx)
+  fd:	20 73 69             	and    %dh,0x69(%ebx)
+ 100:	74 61                	je     163 <.rodata+0x163>
+ 102:	6e                   	outsb  %ds:(%esi),(%dx)
+ 103:	2c 20                	sub    $0x20,%al
+ 105:	49                   	dec    %ecx
+ 106:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 109:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 10c:	75 72                	jne    180 <.rodata+0x180>
+ 10e:	20 6b 65             	and    %ch,0x65(%ebx)
+ 111:	72 6e                	jb     181 <.rodata+0x181>
+ 113:	65 6c                	gs insb (%dx),%es:(%edi)
+ 115:	20 77 72             	and    %dh,0x72(%edi)
+ 118:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 11f:	79 
+ 120:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 123:	75 21                	jne    146 <.rodata+0x146>
+ 125:	2f                   	das    
+ 126:	2f                   	das    
+ 127:	2f                   	das    
+ 128:	2f                   	das    
+ 129:	2f                   	das    
+ 12a:	2f                   	das    
+ 12b:	2f                   	das    
+ 12c:	2f                   	das    
+ 12d:	2f                   	das    
+ 12e:	2f                   	das    
+ 12f:	2f                   	das    
+ 130:	2f                   	das    
+ 131:	2f                   	das    
+ 132:	2f                   	das    
+ 133:	2f                   	das    
+ 134:	2f                   	das    
+ 135:	2f                   	das    
+ 136:	48                   	dec    %eax
+ 137:	65 6c                	gs insb (%dx),%es:(%edi)
+ 139:	6c                   	insb   (%dx),%es:(%edi)
+ 13a:	6f                   	outsl  %ds:(%esi),(%dx)
+ 13b:	20 73 69             	and    %dh,0x69(%ebx)
+ 13e:	74 61                	je     1a1 <.rodata+0x1a1>
+ 140:	6e                   	outsb  %ds:(%esi),(%dx)
+ 141:	2c 20                	sub    $0x20,%al
+ 143:	49                   	dec    %ecx
+ 144:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 147:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 14a:	75 72                	jne    1be <.rodata+0x1be>
+ 14c:	20 6b 65             	and    %ch,0x65(%ebx)
+ 14f:	72 6e                	jb     1bf <.rodata+0x1bf>
+ 151:	65 6c                	gs insb (%dx),%es:(%edi)
+ 153:	20 77 72             	and    %dh,0x72(%edi)
+ 156:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 15d:	79 
+ 15e:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 161:	75 21                	jne    184 <.rodata+0x184>
+ 163:	2f                   	das    
+ 164:	2f                   	das    
+ 165:	2f                   	das    
+ 166:	2f                   	das    
+ 167:	2f                   	das    
+ 168:	2f                   	das    
+ 169:	2f                   	das    
+ 16a:	2f                   	das    
+ 16b:	2f                   	das    
+ 16c:	2f                   	das    
+ 16d:	2f                   	das    
+ 16e:	2f                   	das    
+ 16f:	2f                   	das    
+ 170:	2f                   	das    
+ 171:	2f                   	das    
+ 172:	2f                   	das    
+ 173:	2f                   	das    
+ 174:	48                   	dec    %eax
+ 175:	65 6c                	gs insb (%dx),%es:(%edi)
+ 177:	6c                   	insb   (%dx),%es:(%edi)
+ 178:	6f                   	outsl  %ds:(%esi),(%dx)
+ 179:	20 73 69             	and    %dh,0x69(%ebx)
+ 17c:	74 61                	je     1df <.rodata+0x1df>
+ 17e:	6e                   	outsb  %ds:(%esi),(%dx)
+ 17f:	2c 20                	sub    $0x20,%al
+ 181:	49                   	dec    %ecx
+ 182:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 185:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 188:	75 72                	jne    1fc <.rodata+0x1fc>
+ 18a:	20 6b 65             	and    %ch,0x65(%ebx)
+ 18d:	72 6e                	jb     1fd <.rodata+0x1fd>
+ 18f:	65 6c                	gs insb (%dx),%es:(%edi)
+ 191:	20 77 72             	and    %dh,0x72(%edi)
+ 194:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 19b:	79 
+ 19c:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 19f:	75 21                	jne    1c2 <.rodata+0x1c2>
+ 1a1:	2f                   	das    
+ 1a2:	2f                   	das    
+ 1a3:	2f                   	das    
+ 1a4:	2f                   	das    
+ 1a5:	2f                   	das    
+ 1a6:	2f                   	das    
+ 1a7:	2f                   	das    
+ 1a8:	2f                   	das    
+ 1a9:	2f                   	das    
+ 1aa:	2f                   	das    
+ 1ab:	2f                   	das    
+ 1ac:	2f                   	das    
+ 1ad:	2f                   	das    
+ 1ae:	2f                   	das    
+ 1af:	2f                   	das    
+ 1b0:	2f                   	das    
+ 1b1:	2f                   	das    
+ 1b2:	48                   	dec    %eax
+ 1b3:	65 6c                	gs insb (%dx),%es:(%edi)
+ 1b5:	6c                   	insb   (%dx),%es:(%edi)
+ 1b6:	6f                   	outsl  %ds:(%esi),(%dx)
+ 1b7:	20 73 69             	and    %dh,0x69(%ebx)
+ 1ba:	74 61                	je     21d <.rodata+0x21d>
+ 1bc:	6e                   	outsb  %ds:(%esi),(%dx)
+ 1bd:	2c 20                	sub    $0x20,%al
+ 1bf:	49                   	dec    %ecx
+ 1c0:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 1c3:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 1c6:	75 72                	jne    23a <.rodata+0x23a>
+ 1c8:	20 6b 65             	and    %ch,0x65(%ebx)
+ 1cb:	72 6e                	jb     23b <.rodata+0x23b>
+ 1cd:	65 6c                	gs insb (%dx),%es:(%edi)
+ 1cf:	20 77 72             	and    %dh,0x72(%edi)
+ 1d2:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 1d9:	79 
+ 1da:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 1dd:	75 21                	jne    200 <.rodata+0x200>
+ 1df:	2f                   	das    
+ 1e0:	2f                   	das    
+ 1e1:	2f                   	das    
+ 1e2:	2f                   	das    
+ 1e3:	2f                   	das    
+ 1e4:	2f                   	das    
+ 1e5:	2f                   	das    
+ 1e6:	2f                   	das    
+ 1e7:	2f                   	das    
+ 1e8:	2f                   	das    
+ 1e9:	2f                   	das    
+ 1ea:	2f                   	das    
+ 1eb:	2f                   	das    
+ 1ec:	2f                   	das    
+ 1ed:	2f                   	das    
+ 1ee:	2f                   	das    
+ 1ef:	2f                   	das    
+ 1f0:	48                   	dec    %eax
+ 1f1:	65 6c                	gs insb (%dx),%es:(%edi)
+ 1f3:	6c                   	insb   (%dx),%es:(%edi)
+ 1f4:	6f                   	outsl  %ds:(%esi),(%dx)
+ 1f5:	20 73 69             	and    %dh,0x69(%ebx)
+ 1f8:	74 61                	je     25b <.rodata+0x25b>
+ 1fa:	6e                   	outsb  %ds:(%esi),(%dx)
+ 1fb:	2c 20                	sub    $0x20,%al
+ 1fd:	49                   	dec    %ecx
+ 1fe:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 201:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 204:	75 72                	jne    278 <.rodata+0x278>
+ 206:	20 6b 65             	and    %ch,0x65(%ebx)
+ 209:	72 6e                	jb     279 <.rodata+0x279>
+ 20b:	65 6c                	gs insb (%dx),%es:(%edi)
+ 20d:	20 77 72             	and    %dh,0x72(%edi)
+ 210:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 217:	79 
+ 218:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 21b:	75 21                	jne    23e <.rodata+0x23e>
+ 21d:	2f                   	das    
+ 21e:	2f                   	das    
+ 21f:	2f                   	das    
+ 220:	2f                   	das    
+ 221:	2f                   	das    
+ 222:	2f                   	das    
+ 223:	2f                   	das    
+ 224:	2f                   	das    
+ 225:	2f                   	das    
+ 226:	2f                   	das    
+ 227:	2f                   	das    
+ 228:	2f                   	das    
+ 229:	2f                   	das    
+ 22a:	2f                   	das    
+ 22b:	2f                   	das    
+ 22c:	2f                   	das    
+ 22d:	2f                   	das    
+ 22e:	48                   	dec    %eax
+ 22f:	65 6c                	gs insb (%dx),%es:(%edi)
+ 231:	6c                   	insb   (%dx),%es:(%edi)
+ 232:	6f                   	outsl  %ds:(%esi),(%dx)
+ 233:	20 73 69             	and    %dh,0x69(%ebx)
+ 236:	74 61                	je     299 <.rodata+0x299>
+ 238:	6e                   	outsb  %ds:(%esi),(%dx)
+ 239:	2c 20                	sub    $0x20,%al
+ 23b:	49                   	dec    %ecx
+ 23c:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 23f:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 242:	75 72                	jne    2b6 <.rodata+0x2b6>
+ 244:	20 6b 65             	and    %ch,0x65(%ebx)
+ 247:	72 6e                	jb     2b7 <.rodata+0x2b7>
+ 249:	65 6c                	gs insb (%dx),%es:(%edi)
+ 24b:	20 77 72             	and    %dh,0x72(%edi)
+ 24e:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 255:	79 
+ 256:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 259:	75 21                	jne    27c <.rodata+0x27c>
+ 25b:	2f                   	das    
+ 25c:	2f                   	das    
+ 25d:	2f                   	das    
+ 25e:	2f                   	das    
+ 25f:	2f                   	das    
+ 260:	2f                   	das    
+ 261:	2f                   	das    
+ 262:	2f                   	das    
+ 263:	2f                   	das    
+ 264:	2f                   	das    
+ 265:	2f                   	das    
+ 266:	2f                   	das    
+ 267:	2f                   	das    
+ 268:	2f                   	das    
+ 269:	2f                   	das    
+ 26a:	2f                   	das    
+ 26b:	2f                   	das    
+ 26c:	48                   	dec    %eax
+ 26d:	65 6c                	gs insb (%dx),%es:(%edi)
+ 26f:	6c                   	insb   (%dx),%es:(%edi)
+ 270:	6f                   	outsl  %ds:(%esi),(%dx)
+ 271:	20 73 69             	and    %dh,0x69(%ebx)
+ 274:	74 61                	je     2d7 <.rodata+0x2d7>
+ 276:	6e                   	outsb  %ds:(%esi),(%dx)
+ 277:	2c 20                	sub    $0x20,%al
+ 279:	49                   	dec    %ecx
+ 27a:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 27d:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 280:	75 72                	jne    2f4 <.rodata+0x2f4>
+ 282:	20 6b 65             	and    %ch,0x65(%ebx)
+ 285:	72 6e                	jb     2f5 <.rodata+0x2f5>
+ 287:	65 6c                	gs insb (%dx),%es:(%edi)
+ 289:	20 77 72             	and    %dh,0x72(%edi)
+ 28c:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 293:	79 
+ 294:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 297:	75 21                	jne    2ba <.rodata+0x2ba>
+ 299:	2f                   	das    
+ 29a:	2f                   	das    
+ 29b:	2f                   	das    
+ 29c:	2f                   	das    
+ 29d:	2f                   	das    
+ 29e:	2f                   	das    
+ 29f:	2f                   	das    
+ 2a0:	2f                   	das    
+ 2a1:	2f                   	das    
+ 2a2:	2f                   	das    
+ 2a3:	2f                   	das    
+ 2a4:	2f                   	das    
+ 2a5:	2f                   	das    
+ 2a6:	2f                   	das    
+ 2a7:	2f                   	das    
+ 2a8:	2f                   	das    
+ 2a9:	2f                   	das    
+ 2aa:	48                   	dec    %eax
+ 2ab:	65 6c                	gs insb (%dx),%es:(%edi)
+ 2ad:	6c                   	insb   (%dx),%es:(%edi)
+ 2ae:	6f                   	outsl  %ds:(%esi),(%dx)
+ 2af:	20 73 69             	and    %dh,0x69(%ebx)
+ 2b2:	74 61                	je     315 <.rodata+0x315>
+ 2b4:	6e                   	outsb  %ds:(%esi),(%dx)
+ 2b5:	2c 20                	sub    $0x20,%al
+ 2b7:	49                   	dec    %ecx
+ 2b8:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 2bb:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 2be:	75 72                	jne    332 <.rodata+0x332>
+ 2c0:	20 6b 65             	and    %ch,0x65(%ebx)
+ 2c3:	72 6e                	jb     333 <.rodata+0x333>
+ 2c5:	65 6c                	gs insb (%dx),%es:(%edi)
+ 2c7:	20 77 72             	and    %dh,0x72(%edi)
+ 2ca:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 2d1:	79 
+ 2d2:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 2d5:	75 21                	jne    2f8 <.rodata+0x2f8>
+ 2d7:	2f                   	das    
+ 2d8:	2f                   	das    
+ 2d9:	2f                   	das    
+ 2da:	2f                   	das    
+ 2db:	2f                   	das    
+ 2dc:	2f                   	das    
+ 2dd:	2f                   	das    
+ 2de:	2f                   	das    
+ 2df:	2f                   	das    
+ 2e0:	2f                   	das    
+ 2e1:	2f                   	das    
+ 2e2:	2f                   	das    
+ 2e3:	2f                   	das    
+ 2e4:	2f                   	das    
+ 2e5:	2f                   	das    
+ 2e6:	2f                   	das    
+ 2e7:	2f                   	das    
+ 2e8:	48                   	dec    %eax
+ 2e9:	65 6c                	gs insb (%dx),%es:(%edi)
+ 2eb:	6c                   	insb   (%dx),%es:(%edi)
+ 2ec:	6f                   	outsl  %ds:(%esi),(%dx)
+ 2ed:	20 73 69             	and    %dh,0x69(%ebx)
+ 2f0:	74 61                	je     353 <.rodata+0x353>
+ 2f2:	6e                   	outsb  %ds:(%esi),(%dx)
+ 2f3:	2c 20                	sub    $0x20,%al
+ 2f5:	49                   	dec    %ecx
+ 2f6:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 2f9:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 2fc:	75 72                	jne    370 <.rodata+0x370>
+ 2fe:	20 6b 65             	and    %ch,0x65(%ebx)
+ 301:	72 6e                	jb     371 <.rodata+0x371>
+ 303:	65 6c                	gs insb (%dx),%es:(%edi)
+ 305:	20 77 72             	and    %dh,0x72(%edi)
+ 308:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 30f:	79 
+ 310:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 313:	75 21                	jne    336 <.rodata+0x336>
+ 315:	2f                   	das    
+ 316:	2f                   	das    
+ 317:	2f                   	das    
+ 318:	2f                   	das    
+ 319:	2f                   	das    
+ 31a:	2f                   	das    
+ 31b:	2f                   	das    
+ 31c:	2f                   	das    
+ 31d:	2f                   	das    
+ 31e:	2f                   	das    
+ 31f:	2f                   	das    
+ 320:	2f                   	das    
+ 321:	2f                   	das    
+ 322:	2f                   	das    
+ 323:	2f                   	das    
+ 324:	2f                   	das    
+ 325:	2f                   	das    
+ 326:	48                   	dec    %eax
+ 327:	65 6c                	gs insb (%dx),%es:(%edi)
+ 329:	6c                   	insb   (%dx),%es:(%edi)
+ 32a:	6f                   	outsl  %ds:(%esi),(%dx)
+ 32b:	20 73 69             	and    %dh,0x69(%ebx)
+ 32e:	74 61                	je     391 <.rodata+0x391>
+ 330:	6e                   	outsb  %ds:(%esi),(%dx)
+ 331:	2c 20                	sub    $0x20,%al
+ 333:	49                   	dec    %ecx
+ 334:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 337:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 33a:	75 72                	jne    3ae <.rodata+0x3ae>
+ 33c:	20 6b 65             	and    %ch,0x65(%ebx)
+ 33f:	72 6e                	jb     3af <.rodata+0x3af>
+ 341:	65 6c                	gs insb (%dx),%es:(%edi)
+ 343:	20 77 72             	and    %dh,0x72(%edi)
+ 346:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 34d:	79 
+ 34e:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 351:	75 21                	jne    374 <.rodata+0x374>
+ 353:	2f                   	das    
+ 354:	2f                   	das    
+ 355:	2f                   	das    
+ 356:	2f                   	das    
+ 357:	2f                   	das    
+ 358:	2f                   	das    
+ 359:	2f                   	das    
+ 35a:	2f                   	das    
+ 35b:	2f                   	das    
+ 35c:	2f                   	das    
+ 35d:	2f                   	das    
+ 35e:	2f                   	das    
+ 35f:	2f                   	das    
+ 360:	2f                   	das    
+ 361:	2f                   	das    
+ 362:	2f                   	das    
+ 363:	2f                   	das    
+ 364:	48                   	dec    %eax
+ 365:	65 6c                	gs insb (%dx),%es:(%edi)
+ 367:	6c                   	insb   (%dx),%es:(%edi)
+ 368:	6f                   	outsl  %ds:(%esi),(%dx)
+ 369:	20 73 69             	and    %dh,0x69(%ebx)
+ 36c:	74 61                	je     3cf <.rodata+0x3cf>
+ 36e:	6e                   	outsb  %ds:(%esi),(%dx)
+ 36f:	2c 20                	sub    $0x20,%al
+ 371:	49                   	dec    %ecx
+ 372:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 375:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 378:	75 72                	jne    3ec <.rodata+0x3ec>
+ 37a:	20 6b 65             	and    %ch,0x65(%ebx)
+ 37d:	72 6e                	jb     3ed <.rodata+0x3ed>
+ 37f:	65 6c                	gs insb (%dx),%es:(%edi)
+ 381:	20 77 72             	and    %dh,0x72(%edi)
+ 384:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 38b:	79 
+ 38c:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 38f:	75 21                	jne    3b2 <.rodata+0x3b2>
+ 391:	2f                   	das    
+ 392:	2f                   	das    
+ 393:	2f                   	das    
+ 394:	2f                   	das    
+ 395:	2f                   	das    
+ 396:	2f                   	das    
+ 397:	2f                   	das    
+ 398:	2f                   	das    
+ 399:	2f                   	das    
+ 39a:	2f                   	das    
+ 39b:	2f                   	das    
+ 39c:	2f                   	das    
+ 39d:	2f                   	das    
+ 39e:	2f                   	das    
+ 39f:	2f                   	das    
+ 3a0:	2f                   	das    
+ 3a1:	2f                   	das    
+ 3a2:	48                   	dec    %eax
+ 3a3:	65 6c                	gs insb (%dx),%es:(%edi)
+ 3a5:	6c                   	insb   (%dx),%es:(%edi)
+ 3a6:	6f                   	outsl  %ds:(%esi),(%dx)
+ 3a7:	20 73 69             	and    %dh,0x69(%ebx)
+ 3aa:	74 61                	je     40d <.rodata+0x40d>
+ 3ac:	6e                   	outsb  %ds:(%esi),(%dx)
+ 3ad:	2c 20                	sub    $0x20,%al
+ 3af:	49                   	dec    %ecx
+ 3b0:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 3b3:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 3b6:	75 72                	jne    42a <.rodata+0x42a>
+ 3b8:	20 6b 65             	and    %ch,0x65(%ebx)
+ 3bb:	72 6e                	jb     42b <.rodata+0x42b>
+ 3bd:	65 6c                	gs insb (%dx),%es:(%edi)
+ 3bf:	20 77 72             	and    %dh,0x72(%edi)
+ 3c2:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 3c9:	79 
+ 3ca:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 3cd:	75 21                	jne    3f0 <.rodata+0x3f0>
+ 3cf:	2f                   	das    
+ 3d0:	2f                   	das    
+ 3d1:	2f                   	das    
+ 3d2:	2f                   	das    
+ 3d3:	2f                   	das    
+ 3d4:	2f                   	das    
+ 3d5:	2f                   	das    
+ 3d6:	2f                   	das    
+ 3d7:	2f                   	das    
+ 3d8:	2f                   	das    
+ 3d9:	2f                   	das    
+ 3da:	2f                   	das    
+ 3db:	2f                   	das    
+ 3dc:	2f                   	das    
+ 3dd:	2f                   	das    
+ 3de:	2f                   	das    
+ 3df:	2f                   	das    
+ 3e0:	48                   	dec    %eax
+ 3e1:	65 6c                	gs insb (%dx),%es:(%edi)
+ 3e3:	6c                   	insb   (%dx),%es:(%edi)
+ 3e4:	6f                   	outsl  %ds:(%esi),(%dx)
+ 3e5:	20 73 69             	and    %dh,0x69(%ebx)
+ 3e8:	74 61                	je     44b <.rodata+0x44b>
+ 3ea:	6e                   	outsb  %ds:(%esi),(%dx)
+ 3eb:	2c 20                	sub    $0x20,%al
+ 3ed:	49                   	dec    %ecx
+ 3ee:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 3f1:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 3f4:	75 72                	jne    468 <.rodata+0x468>
+ 3f6:	20 6b 65             	and    %ch,0x65(%ebx)
+ 3f9:	72 6e                	jb     469 <.rodata+0x469>
+ 3fb:	65 6c                	gs insb (%dx),%es:(%edi)
+ 3fd:	20 77 72             	and    %dh,0x72(%edi)
+ 400:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 407:	79 
+ 408:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 40b:	75 21                	jne    42e <.rodata+0x42e>
+ 40d:	2f                   	das    
+ 40e:	2f                   	das    
+ 40f:	2f                   	das    
+ 410:	2f                   	das    
+ 411:	2f                   	das    
+ 412:	2f                   	das    
+ 413:	2f                   	das    
+ 414:	2f                   	das    
+ 415:	2f                   	das    
+ 416:	2f                   	das    
+ 417:	2f                   	das    
+ 418:	2f                   	das    
+ 419:	2f                   	das    
+ 41a:	2f                   	das    
+ 41b:	2f                   	das    
+ 41c:	2f                   	das    
+ 41d:	2f                   	das    
+ 41e:	48                   	dec    %eax
+ 41f:	65 6c                	gs insb (%dx),%es:(%edi)
+ 421:	6c                   	insb   (%dx),%es:(%edi)
+ 422:	6f                   	outsl  %ds:(%esi),(%dx)
+ 423:	20 73 69             	and    %dh,0x69(%ebx)
+ 426:	74 61                	je     489 <.rodata+0x489>
+ 428:	6e                   	outsb  %ds:(%esi),(%dx)
+ 429:	2c 20                	sub    $0x20,%al
+ 42b:	49                   	dec    %ecx
+ 42c:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 42f:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 432:	75 72                	jne    4a6 <.rodata+0x4a6>
+ 434:	20 6b 65             	and    %ch,0x65(%ebx)
+ 437:	72 6e                	jb     4a7 <.rodata+0x4a7>
+ 439:	65 6c                	gs insb (%dx),%es:(%edi)
+ 43b:	20 77 72             	and    %dh,0x72(%edi)
+ 43e:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 445:	79 
+ 446:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 449:	75 21                	jne    46c <.rodata+0x46c>
+ 44b:	2f                   	das    
+ 44c:	2f                   	das    
+ 44d:	2f                   	das    
+ 44e:	2f                   	das    
+ 44f:	2f                   	das    
+ 450:	2f                   	das    
+ 451:	2f                   	das    
+ 452:	2f                   	das    
+ 453:	2f                   	das    
+ 454:	2f                   	das    
+ 455:	2f                   	das    
+ 456:	2f                   	das    
+ 457:	2f                   	das    
+ 458:	2f                   	das    
+ 459:	2f                   	das    
+ 45a:	2f                   	das    
+ 45b:	2f                   	das    
+ 45c:	48                   	dec    %eax
+ 45d:	65 6c                	gs insb (%dx),%es:(%edi)
+ 45f:	6c                   	insb   (%dx),%es:(%edi)
+ 460:	6f                   	outsl  %ds:(%esi),(%dx)
+ 461:	20 73 69             	and    %dh,0x69(%ebx)
+ 464:	74 61                	je     4c7 <.rodata+0x4c7>
+ 466:	6e                   	outsb  %ds:(%esi),(%dx)
+ 467:	2c 20                	sub    $0x20,%al
+ 469:	49                   	dec    %ecx
+ 46a:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 46d:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 470:	75 72                	jne    4e4 <.rodata+0x4e4>
+ 472:	20 6b 65             	and    %ch,0x65(%ebx)
+ 475:	72 6e                	jb     4e5 <.rodata+0x4e5>
+ 477:	65 6c                	gs insb (%dx),%es:(%edi)
+ 479:	20 77 72             	and    %dh,0x72(%edi)
+ 47c:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 483:	79 
+ 484:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 487:	75 21                	jne    4aa <.rodata+0x4aa>
+ 489:	2f                   	das    
+ 48a:	2f                   	das    
+ 48b:	2f                   	das    
+ 48c:	2f                   	das    
+ 48d:	2f                   	das    
+ 48e:	2f                   	das    
+ 48f:	2f                   	das    
+ 490:	2f                   	das    
+ 491:	2f                   	das    
+ 492:	2f                   	das    
+ 493:	2f                   	das    
+ 494:	2f                   	das    
+ 495:	2f                   	das    
+ 496:	2f                   	das    
+ 497:	2f                   	das    
+ 498:	2f                   	das    
+ 499:	2f                   	das    
+ 49a:	48                   	dec    %eax
+ 49b:	65 6c                	gs insb (%dx),%es:(%edi)
+ 49d:	6c                   	insb   (%dx),%es:(%edi)
+ 49e:	6f                   	outsl  %ds:(%esi),(%dx)
+ 49f:	20 73 69             	and    %dh,0x69(%ebx)
+ 4a2:	74 61                	je     505 <.rodata+0x505>
+ 4a4:	6e                   	outsb  %ds:(%esi),(%dx)
+ 4a5:	2c 20                	sub    $0x20,%al
+ 4a7:	49                   	dec    %ecx
+ 4a8:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 4ab:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 4ae:	75 72                	jne    522 <.rodata+0x522>
+ 4b0:	20 6b 65             	and    %ch,0x65(%ebx)
+ 4b3:	72 6e                	jb     523 <.rodata+0x523>
+ 4b5:	65 6c                	gs insb (%dx),%es:(%edi)
+ 4b7:	20 77 72             	and    %dh,0x72(%edi)
+ 4ba:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 4c1:	79 
+ 4c2:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 4c5:	75 21                	jne    4e8 <.rodata+0x4e8>
+ 4c7:	2f                   	das    
+ 4c8:	2f                   	das    
+ 4c9:	2f                   	das    
+ 4ca:	2f                   	das    
+ 4cb:	2f                   	das    
+ 4cc:	2f                   	das    
+ 4cd:	2f                   	das    
+ 4ce:	2f                   	das    
+ 4cf:	2f                   	das    
+ 4d0:	2f                   	das    
+ 4d1:	2f                   	das    
+ 4d2:	2f                   	das    
+ 4d3:	2f                   	das    
+ 4d4:	2f                   	das    
+ 4d5:	2f                   	das    
+ 4d6:	2f                   	das    
+ 4d7:	2f                   	das    
+ 4d8:	48                   	dec    %eax
+ 4d9:	65 6c                	gs insb (%dx),%es:(%edi)
+ 4db:	6c                   	insb   (%dx),%es:(%edi)
+ 4dc:	6f                   	outsl  %ds:(%esi),(%dx)
+ 4dd:	20 73 69             	and    %dh,0x69(%ebx)
+ 4e0:	74 61                	je     543 <.rodata+0x543>
+ 4e2:	6e                   	outsb  %ds:(%esi),(%dx)
+ 4e3:	2c 20                	sub    $0x20,%al
+ 4e5:	49                   	dec    %ecx
+ 4e6:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 4e9:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 4ec:	75 72                	jne    560 <.rodata+0x560>
+ 4ee:	20 6b 65             	and    %ch,0x65(%ebx)
+ 4f1:	72 6e                	jb     561 <.rodata+0x561>
+ 4f3:	65 6c                	gs insb (%dx),%es:(%edi)
+ 4f5:	20 77 72             	and    %dh,0x72(%edi)
+ 4f8:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 4ff:	79 
+ 500:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 503:	75 21                	jne    526 <.rodata+0x526>
+ 505:	2f                   	das    
+ 506:	2f                   	das    
+ 507:	2f                   	das    
+ 508:	2f                   	das    
+ 509:	2f                   	das    
+ 50a:	2f                   	das    
+ 50b:	2f                   	das    
+ 50c:	2f                   	das    
+ 50d:	2f                   	das    
+ 50e:	2f                   	das    
+ 50f:	2f                   	das    
+ 510:	2f                   	das    
+ 511:	2f                   	das    
+ 512:	2f                   	das    
+ 513:	2f                   	das    
+ 514:	2f                   	das    
+ 515:	2f                   	das    
+ 516:	48                   	dec    %eax
+ 517:	65 6c                	gs insb (%dx),%es:(%edi)
+ 519:	6c                   	insb   (%dx),%es:(%edi)
+ 51a:	6f                   	outsl  %ds:(%esi),(%dx)
+ 51b:	20 73 69             	and    %dh,0x69(%ebx)
+ 51e:	74 61                	je     581 <.rodata+0x581>
+ 520:	6e                   	outsb  %ds:(%esi),(%dx)
+ 521:	2c 20                	sub    $0x20,%al
+ 523:	49                   	dec    %ecx
+ 524:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 527:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 52a:	75 72                	jne    59e <.rodata+0x59e>
+ 52c:	20 6b 65             	and    %ch,0x65(%ebx)
+ 52f:	72 6e                	jb     59f <.rodata+0x59f>
+ 531:	65 6c                	gs insb (%dx),%es:(%edi)
+ 533:	20 77 72             	and    %dh,0x72(%edi)
+ 536:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 53d:	79 
+ 53e:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 541:	75 21                	jne    564 <.rodata+0x564>
+ 543:	2f                   	das    
+ 544:	2f                   	das    
+ 545:	2f                   	das    
+ 546:	2f                   	das    
+ 547:	2f                   	das    
+ 548:	2f                   	das    
+ 549:	2f                   	das    
+ 54a:	2f                   	das    
+ 54b:	2f                   	das    
+ 54c:	2f                   	das    
+ 54d:	2f                   	das    
+ 54e:	2f                   	das    
+ 54f:	2f                   	das    
+ 550:	2f                   	das    
+ 551:	2f                   	das    
+ 552:	2f                   	das    
+ 553:	2f                   	das    
+ 554:	48                   	dec    %eax
+ 555:	65 6c                	gs insb (%dx),%es:(%edi)
+ 557:	6c                   	insb   (%dx),%es:(%edi)
+ 558:	6f                   	outsl  %ds:(%esi),(%dx)
+ 559:	20 73 69             	and    %dh,0x69(%ebx)
+ 55c:	74 61                	je     5bf <.rodata+0x5bf>
+ 55e:	6e                   	outsb  %ds:(%esi),(%dx)
+ 55f:	2c 20                	sub    $0x20,%al
+ 561:	49                   	dec    %ecx
+ 562:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 565:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 568:	75 72                	jne    5dc <.rodata+0x5dc>
+ 56a:	20 6b 65             	and    %ch,0x65(%ebx)
+ 56d:	72 6e                	jb     5dd <.rodata+0x5dd>
+ 56f:	65 6c                	gs insb (%dx),%es:(%edi)
+ 571:	20 77 72             	and    %dh,0x72(%edi)
+ 574:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 57b:	79 
+ 57c:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 57f:	75 21                	jne    5a2 <.rodata+0x5a2>
+ 581:	2f                   	das    
+ 582:	2f                   	das    
+ 583:	2f                   	das    
+ 584:	2f                   	das    
+ 585:	2f                   	das    
+ 586:	2f                   	das    
+ 587:	2f                   	das    
+ 588:	2f                   	das    
+ 589:	2f                   	das    
+ 58a:	2f                   	das    
+ 58b:	2f                   	das    
+ 58c:	2f                   	das    
+ 58d:	2f                   	das    
+ 58e:	2f                   	das    
+ 58f:	2f                   	das    
+ 590:	2f                   	das    
+ 591:	2f                   	das    
+ 592:	48                   	dec    %eax
+ 593:	65 6c                	gs insb (%dx),%es:(%edi)
+ 595:	6c                   	insb   (%dx),%es:(%edi)
+ 596:	6f                   	outsl  %ds:(%esi),(%dx)
+ 597:	20 73 69             	and    %dh,0x69(%ebx)
+ 59a:	74 61                	je     5fd <.rodata+0x5fd>
+ 59c:	6e                   	outsb  %ds:(%esi),(%dx)
+ 59d:	2c 20                	sub    $0x20,%al
+ 59f:	49                   	dec    %ecx
+ 5a0:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 5a3:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 5a6:	75 72                	jne    61a <.rodata+0x61a>
+ 5a8:	20 6b 65             	and    %ch,0x65(%ebx)
+ 5ab:	72 6e                	jb     61b <.rodata+0x61b>
+ 5ad:	65 6c                	gs insb (%dx),%es:(%edi)
+ 5af:	20 77 72             	and    %dh,0x72(%edi)
+ 5b2:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 5b9:	79 
+ 5ba:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 5bd:	75 21                	jne    5e0 <.rodata+0x5e0>
+ 5bf:	2f                   	das    
+ 5c0:	2f                   	das    
+ 5c1:	2f                   	das    
+ 5c2:	2f                   	das    
+ 5c3:	2f                   	das    
+ 5c4:	2f                   	das    
+ 5c5:	2f                   	das    
+ 5c6:	2f                   	das    
+ 5c7:	2f                   	das    
+ 5c8:	2f                   	das    
+ 5c9:	2f                   	das    
+ 5ca:	2f                   	das    
+ 5cb:	2f                   	das    
+ 5cc:	2f                   	das    
+ 5cd:	2f                   	das    
+ 5ce:	2f                   	das    
+ 5cf:	2f                   	das    
+ 5d0:	48                   	dec    %eax
+ 5d1:	65 6c                	gs insb (%dx),%es:(%edi)
+ 5d3:	6c                   	insb   (%dx),%es:(%edi)
+ 5d4:	6f                   	outsl  %ds:(%esi),(%dx)
+ 5d5:	20 73 69             	and    %dh,0x69(%ebx)
+ 5d8:	74 61                	je     63b <.rodata+0x63b>
+ 5da:	6e                   	outsb  %ds:(%esi),(%dx)
+ 5db:	2c 20                	sub    $0x20,%al
+ 5dd:	49                   	dec    %ecx
+ 5de:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 5e1:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 5e4:	75 72                	jne    658 <.rodata+0x658>
+ 5e6:	20 6b 65             	and    %ch,0x65(%ebx)
+ 5e9:	72 6e                	jb     659 <.rodata+0x659>
+ 5eb:	65 6c                	gs insb (%dx),%es:(%edi)
+ 5ed:	20 77 72             	and    %dh,0x72(%edi)
+ 5f0:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 5f7:	79 
+ 5f8:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 5fb:	75 21                	jne    61e <.rodata+0x61e>
+ 5fd:	2f                   	das    
+ 5fe:	2f                   	das    
+ 5ff:	2f                   	das    
+ 600:	2f                   	das    
+ 601:	2f                   	das    
+ 602:	2f                   	das    
+ 603:	2f                   	das    
+ 604:	2f                   	das    
+ 605:	2f                   	das    
+ 606:	2f                   	das    
+ 607:	2f                   	das    
+ 608:	2f                   	das    
+ 609:	2f                   	das    
+ 60a:	2f                   	das    
+ 60b:	2f                   	das    
+ 60c:	2f                   	das    
+ 60d:	2f                   	das    
+ 60e:	48                   	dec    %eax
+ 60f:	65 6c                	gs insb (%dx),%es:(%edi)
+ 611:	6c                   	insb   (%dx),%es:(%edi)
+ 612:	6f                   	outsl  %ds:(%esi),(%dx)
+ 613:	20 73 69             	and    %dh,0x69(%ebx)
+ 616:	74 61                	je     679 <.rodata+0x679>
+ 618:	6e                   	outsb  %ds:(%esi),(%dx)
+ 619:	2c 20                	sub    $0x20,%al
+ 61b:	49                   	dec    %ecx
+ 61c:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 61f:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 622:	75 72                	jne    696 <.rodata+0x696>
+ 624:	20 6b 65             	and    %ch,0x65(%ebx)
+ 627:	72 6e                	jb     697 <.rodata+0x697>
+ 629:	65 6c                	gs insb (%dx),%es:(%edi)
+ 62b:	20 77 72             	and    %dh,0x72(%edi)
+ 62e:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 635:	79 
+ 636:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 639:	75 21                	jne    65c <.rodata+0x65c>
+ 63b:	2f                   	das    
+ 63c:	2f                   	das    
+ 63d:	2f                   	das    
+ 63e:	2f                   	das    
+ 63f:	2f                   	das    
+ 640:	2f                   	das    
+ 641:	2f                   	das    
+ 642:	2f                   	das    
+ 643:	2f                   	das    
+ 644:	2f                   	das    
+ 645:	2f                   	das    
+ 646:	2f                   	das    
+ 647:	2f                   	das    
+ 648:	2f                   	das    
+ 649:	2f                   	das    
+ 64a:	2f                   	das    
+ 64b:	2f                   	das    
+ 64c:	48                   	dec    %eax
+ 64d:	65 6c                	gs insb (%dx),%es:(%edi)
+ 64f:	6c                   	insb   (%dx),%es:(%edi)
+ 650:	6f                   	outsl  %ds:(%esi),(%dx)
+ 651:	20 73 69             	and    %dh,0x69(%ebx)
+ 654:	74 61                	je     6b7 <.rodata+0x6b7>
+ 656:	6e                   	outsb  %ds:(%esi),(%dx)
+ 657:	2c 20                	sub    $0x20,%al
+ 659:	49                   	dec    %ecx
+ 65a:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 65d:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 660:	75 72                	jne    6d4 <.rodata+0x6d4>
+ 662:	20 6b 65             	and    %ch,0x65(%ebx)
+ 665:	72 6e                	jb     6d5 <.rodata+0x6d5>
+ 667:	65 6c                	gs insb (%dx),%es:(%edi)
+ 669:	20 77 72             	and    %dh,0x72(%edi)
+ 66c:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 673:	79 
+ 674:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 677:	75 21                	jne    69a <.rodata+0x69a>
+ 679:	2f                   	das    
+ 67a:	2f                   	das    
+ 67b:	2f                   	das    
+ 67c:	2f                   	das    
+ 67d:	2f                   	das    
+ 67e:	2f                   	das    
+ 67f:	2f                   	das    
+ 680:	2f                   	das    
+ 681:	2f                   	das    
+ 682:	2f                   	das    
+ 683:	2f                   	das    
+ 684:	2f                   	das    
+ 685:	2f                   	das    
+ 686:	2f                   	das    
+ 687:	2f                   	das    
+ 688:	2f                   	das    
+ 689:	2f                   	das    
+ 68a:	48                   	dec    %eax
+ 68b:	65 6c                	gs insb (%dx),%es:(%edi)
+ 68d:	6c                   	insb   (%dx),%es:(%edi)
+ 68e:	6f                   	outsl  %ds:(%esi),(%dx)
+ 68f:	20 73 69             	and    %dh,0x69(%ebx)
+ 692:	74 61                	je     6f5 <.rodata+0x6f5>
+ 694:	6e                   	outsb  %ds:(%esi),(%dx)
+ 695:	2c 20                	sub    $0x20,%al
+ 697:	49                   	dec    %ecx
+ 698:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 69b:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 69e:	75 72                	jne    712 <.rodata+0x712>
+ 6a0:	20 6b 65             	and    %ch,0x65(%ebx)
+ 6a3:	72 6e                	jb     713 <.rodata+0x713>
+ 6a5:	65 6c                	gs insb (%dx),%es:(%edi)
+ 6a7:	20 77 72             	and    %dh,0x72(%edi)
+ 6aa:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 6b1:	79 
+ 6b2:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 6b5:	75 21                	jne    6d8 <.rodata+0x6d8>
+ 6b7:	2f                   	das    
+ 6b8:	2f                   	das    
+ 6b9:	2f                   	das    
+ 6ba:	2f                   	das    
+ 6bb:	2f                   	das    
+ 6bc:	2f                   	das    
+ 6bd:	2f                   	das    
+ 6be:	2f                   	das    
+ 6bf:	2f                   	das    
+ 6c0:	2f                   	das    
+ 6c1:	2f                   	das    
+ 6c2:	2f                   	das    
+ 6c3:	2f                   	das    
+ 6c4:	2f                   	das    
+ 6c5:	2f                   	das    
+ 6c6:	2f                   	das    
+ 6c7:	2f                   	das    
+ 6c8:	48                   	dec    %eax
+ 6c9:	65 6c                	gs insb (%dx),%es:(%edi)
+ 6cb:	6c                   	insb   (%dx),%es:(%edi)
+ 6cc:	6f                   	outsl  %ds:(%esi),(%dx)
+ 6cd:	20 73 69             	and    %dh,0x69(%ebx)
+ 6d0:	74 61                	je     733 <.rodata+0x733>
+ 6d2:	6e                   	outsb  %ds:(%esi),(%dx)
+ 6d3:	2c 20                	sub    $0x20,%al
+ 6d5:	49                   	dec    %ecx
+ 6d6:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 6d9:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 6dc:	75 72                	jne    750 <.rodata+0x750>
+ 6de:	20 6b 65             	and    %ch,0x65(%ebx)
+ 6e1:	72 6e                	jb     751 <.rodata+0x751>
+ 6e3:	65 6c                	gs insb (%dx),%es:(%edi)
+ 6e5:	20 77 72             	and    %dh,0x72(%edi)
+ 6e8:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 6ef:	79 
+ 6f0:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 6f3:	75 21                	jne    716 <.rodata+0x716>
+ 6f5:	2f                   	das    
+ 6f6:	2f                   	das    
+ 6f7:	2f                   	das    
+ 6f8:	2f                   	das    
+ 6f9:	2f                   	das    
+ 6fa:	2f                   	das    
+ 6fb:	2f                   	das    
+ 6fc:	2f                   	das    
+ 6fd:	2f                   	das    
+ 6fe:	2f                   	das    
+ 6ff:	2f                   	das    
+ 700:	2f                   	das    
+ 701:	2f                   	das    
+ 702:	2f                   	das    
+ 703:	2f                   	das    
+ 704:	2f                   	das    
+ 705:	2f                   	das    
+ 706:	48                   	dec    %eax
+ 707:	65 6c                	gs insb (%dx),%es:(%edi)
+ 709:	6c                   	insb   (%dx),%es:(%edi)
+ 70a:	6f                   	outsl  %ds:(%esi),(%dx)
+ 70b:	20 73 69             	and    %dh,0x69(%ebx)
+ 70e:	74 61                	je     771 <.rodata+0x771>
+ 710:	6e                   	outsb  %ds:(%esi),(%dx)
+ 711:	2c 20                	sub    $0x20,%al
+ 713:	49                   	dec    %ecx
+ 714:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 717:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 71a:	75 72                	jne    78e <.rodata+0x78e>
+ 71c:	20 6b 65             	and    %ch,0x65(%ebx)
+ 71f:	72 6e                	jb     78f <.rodata+0x78f>
+ 721:	65 6c                	gs insb (%dx),%es:(%edi)
+ 723:	20 77 72             	and    %dh,0x72(%edi)
+ 726:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 72d:	79 
+ 72e:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 731:	75 21                	jne    754 <.rodata+0x754>
+ 733:	2f                   	das    
+ 734:	2f                   	das    
+ 735:	2f                   	das    
+ 736:	2f                   	das    
+ 737:	2f                   	das    
+ 738:	2f                   	das    
+ 739:	2f                   	das    
+ 73a:	2f                   	das    
+ 73b:	2f                   	das    
+ 73c:	2f                   	das    
+ 73d:	2f                   	das    
+ 73e:	2f                   	das    
+ 73f:	2f                   	das    
+ 740:	2f                   	das    
+ 741:	2f                   	das    
+ 742:	2f                   	das    
+ 743:	2f                   	das    
+ 744:	48                   	dec    %eax
+ 745:	65 6c                	gs insb (%dx),%es:(%edi)
+ 747:	6c                   	insb   (%dx),%es:(%edi)
+ 748:	6f                   	outsl  %ds:(%esi),(%dx)
+ 749:	20 73 69             	and    %dh,0x69(%ebx)
+ 74c:	74 61                	je     7af <.rodata+0x7af>
+ 74e:	6e                   	outsb  %ds:(%esi),(%dx)
+ 74f:	2c 20                	sub    $0x20,%al
+ 751:	49                   	dec    %ecx
+ 752:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 755:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 758:	75 72                	jne    7cc <.rodata+0x7cc>
+ 75a:	20 6b 65             	and    %ch,0x65(%ebx)
+ 75d:	72 6e                	jb     7cd <.rodata+0x7cd>
+ 75f:	65 6c                	gs insb (%dx),%es:(%edi)
+ 761:	20 77 72             	and    %dh,0x72(%edi)
+ 764:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 76b:	79 
+ 76c:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 76f:	75 21                	jne    792 <.rodata+0x792>
+ 771:	2f                   	das    
+ 772:	2f                   	das    
+ 773:	2f                   	das    
+ 774:	2f                   	das    
+ 775:	2f                   	das    
+ 776:	2f                   	das    
+ 777:	2f                   	das    
+ 778:	2f                   	das    
+ 779:	2f                   	das    
+ 77a:	2f                   	das    
+ 77b:	2f                   	das    
+ 77c:	2f                   	das    
+ 77d:	2f                   	das    
+ 77e:	2f                   	das    
+ 77f:	2f                   	das    
+ 780:	2f                   	das    
+ 781:	2f                   	das    
+ 782:	48                   	dec    %eax
+ 783:	65 6c                	gs insb (%dx),%es:(%edi)
+ 785:	6c                   	insb   (%dx),%es:(%edi)
+ 786:	6f                   	outsl  %ds:(%esi),(%dx)
+ 787:	20 73 69             	and    %dh,0x69(%ebx)
+ 78a:	74 61                	je     7ed <.rodata+0x7ed>
+ 78c:	6e                   	outsb  %ds:(%esi),(%dx)
+ 78d:	2c 20                	sub    $0x20,%al
+ 78f:	49                   	dec    %ecx
+ 790:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 793:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 796:	75 72                	jne    80a <.rodata+0x80a>
+ 798:	20 6b 65             	and    %ch,0x65(%ebx)
+ 79b:	72 6e                	jb     80b <.rodata+0x80b>
+ 79d:	65 6c                	gs insb (%dx),%es:(%edi)
+ 79f:	20 77 72             	and    %dh,0x72(%edi)
+ 7a2:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 7a9:	79 
+ 7aa:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 7ad:	75 21                	jne    7d0 <.rodata+0x7d0>
+ 7af:	2f                   	das    
+ 7b0:	2f                   	das    
+ 7b1:	2f                   	das    
+ 7b2:	2f                   	das    
+ 7b3:	2f                   	das    
+ 7b4:	2f                   	das    
+ 7b5:	2f                   	das    
+ 7b6:	2f                   	das    
+ 7b7:	2f                   	das    
+ 7b8:	2f                   	das    
+ 7b9:	2f                   	das    
+ 7ba:	2f                   	das    
+ 7bb:	2f                   	das    
+ 7bc:	2f                   	das    
+ 7bd:	2f                   	das    
+ 7be:	2f                   	das    
+ 7bf:	2f                   	das    
+ 7c0:	48                   	dec    %eax
+ 7c1:	65 6c                	gs insb (%dx),%es:(%edi)
+ 7c3:	6c                   	insb   (%dx),%es:(%edi)
+ 7c4:	6f                   	outsl  %ds:(%esi),(%dx)
+ 7c5:	20 73 69             	and    %dh,0x69(%ebx)
+ 7c8:	74 61                	je     82b <.rodata+0x82b>
+ 7ca:	6e                   	outsb  %ds:(%esi),(%dx)
+ 7cb:	2c 20                	sub    $0x20,%al
+ 7cd:	49                   	dec    %ecx
+ 7ce:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 7d1:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 7d4:	75 72                	jne    848 <.rodata+0x848>
+ 7d6:	20 6b 65             	and    %ch,0x65(%ebx)
+ 7d9:	72 6e                	jb     849 <.rodata+0x849>
+ 7db:	65 6c                	gs insb (%dx),%es:(%edi)
+ 7dd:	20 77 72             	and    %dh,0x72(%edi)
+ 7e0:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 7e7:	79 
+ 7e8:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 7eb:	75 21                	jne    80e <.rodata+0x80e>
+ 7ed:	2f                   	das    
+ 7ee:	2f                   	das    
+ 7ef:	2f                   	das    
+ 7f0:	2f                   	das    
+ 7f1:	2f                   	das    
+ 7f2:	2f                   	das    
+ 7f3:	2f                   	das    
+ 7f4:	2f                   	das    
+ 7f5:	2f                   	das    
+ 7f6:	2f                   	das    
+ 7f7:	2f                   	das    
+ 7f8:	2f                   	das    
+ 7f9:	2f                   	das    
+ 7fa:	2f                   	das    
+ 7fb:	2f                   	das    
+ 7fc:	2f                   	das    
+ 7fd:	2f                   	das    
+ 7fe:	48                   	dec    %eax
+ 7ff:	65 6c                	gs insb (%dx),%es:(%edi)
+ 801:	6c                   	insb   (%dx),%es:(%edi)
+ 802:	6f                   	outsl  %ds:(%esi),(%dx)
+ 803:	20 73 69             	and    %dh,0x69(%ebx)
+ 806:	74 61                	je     869 <.rodata+0x869>
+ 808:	6e                   	outsb  %ds:(%esi),(%dx)
+ 809:	2c 20                	sub    $0x20,%al
+ 80b:	49                   	dec    %ecx
+ 80c:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 80f:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 812:	75 72                	jne    886 <.rodata+0x886>
+ 814:	20 6b 65             	and    %ch,0x65(%ebx)
+ 817:	72 6e                	jb     887 <.rodata+0x887>
+ 819:	65 6c                	gs insb (%dx),%es:(%edi)
+ 81b:	20 77 72             	and    %dh,0x72(%edi)
+ 81e:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 825:	79 
+ 826:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 829:	75 21                	jne    84c <.rodata+0x84c>
+ 82b:	2f                   	das    
+ 82c:	2f                   	das    
+ 82d:	2f                   	das    
+ 82e:	2f                   	das    
+ 82f:	2f                   	das    
+ 830:	2f                   	das    
+ 831:	2f                   	das    
+ 832:	2f                   	das    
+ 833:	2f                   	das    
+ 834:	2f                   	das    
+ 835:	2f                   	das    
+ 836:	2f                   	das    
+ 837:	2f                   	das    
+ 838:	2f                   	das    
+ 839:	2f                   	das    
+ 83a:	2f                   	das    
+ 83b:	2f                   	das    
+ 83c:	48                   	dec    %eax
+ 83d:	65 6c                	gs insb (%dx),%es:(%edi)
+ 83f:	6c                   	insb   (%dx),%es:(%edi)
+ 840:	6f                   	outsl  %ds:(%esi),(%dx)
+ 841:	20 73 69             	and    %dh,0x69(%ebx)
+ 844:	74 61                	je     8a7 <.rodata+0x8a7>
+ 846:	6e                   	outsb  %ds:(%esi),(%dx)
+ 847:	2c 20                	sub    $0x20,%al
+ 849:	49                   	dec    %ecx
+ 84a:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 84d:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 850:	75 72                	jne    8c4 <.rodata+0x8c4>
+ 852:	20 6b 65             	and    %ch,0x65(%ebx)
+ 855:	72 6e                	jb     8c5 <.rodata+0x8c5>
+ 857:	65 6c                	gs insb (%dx),%es:(%edi)
+ 859:	20 77 72             	and    %dh,0x72(%edi)
+ 85c:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 863:	79 
+ 864:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 867:	75 21                	jne    88a <.rodata+0x88a>
+ 869:	2f                   	das    
+ 86a:	2f                   	das    
+ 86b:	2f                   	das    
+ 86c:	2f                   	das    
+ 86d:	2f                   	das    
+ 86e:	2f                   	das    
+ 86f:	2f                   	das    
+ 870:	2f                   	das    
+ 871:	2f                   	das    
+ 872:	2f                   	das    
+ 873:	2f                   	das    
+ 874:	2f                   	das    
+ 875:	2f                   	das    
+ 876:	2f                   	das    
+ 877:	2f                   	das    
+ 878:	2f                   	das    
+ 879:	2f                   	das    
+ 87a:	48                   	dec    %eax
+ 87b:	65 6c                	gs insb (%dx),%es:(%edi)
+ 87d:	6c                   	insb   (%dx),%es:(%edi)
+ 87e:	6f                   	outsl  %ds:(%esi),(%dx)
+ 87f:	20 73 69             	and    %dh,0x69(%ebx)
+ 882:	74 61                	je     8e5 <.rodata+0x8e5>
+ 884:	6e                   	outsb  %ds:(%esi),(%dx)
+ 885:	2c 20                	sub    $0x20,%al
+ 887:	49                   	dec    %ecx
+ 888:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 88b:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 88e:	75 72                	jne    902 <.rodata+0x902>
+ 890:	20 6b 65             	and    %ch,0x65(%ebx)
+ 893:	72 6e                	jb     903 <.rodata+0x903>
+ 895:	65 6c                	gs insb (%dx),%es:(%edi)
+ 897:	20 77 72             	and    %dh,0x72(%edi)
+ 89a:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 8a1:	79 
+ 8a2:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 8a5:	75 21                	jne    8c8 <.rodata+0x8c8>
+ 8a7:	2f                   	das    
+ 8a8:	2f                   	das    
+ 8a9:	2f                   	das    
+ 8aa:	2f                   	das    
+ 8ab:	2f                   	das    
+ 8ac:	2f                   	das    
+ 8ad:	2f                   	das    
+ 8ae:	2f                   	das    
+ 8af:	2f                   	das    
+ 8b0:	2f                   	das    
+ 8b1:	2f                   	das    
+ 8b2:	2f                   	das    
+ 8b3:	2f                   	das    
+ 8b4:	2f                   	das    
+ 8b5:	2f                   	das    
+ 8b6:	2f                   	das    
+ 8b7:	2f                   	das    
+ 8b8:	48                   	dec    %eax
+ 8b9:	65 6c                	gs insb (%dx),%es:(%edi)
+ 8bb:	6c                   	insb   (%dx),%es:(%edi)
+ 8bc:	6f                   	outsl  %ds:(%esi),(%dx)
+ 8bd:	20 73 69             	and    %dh,0x69(%ebx)
+ 8c0:	74 61                	je     923 <.rodata+0x923>
+ 8c2:	6e                   	outsb  %ds:(%esi),(%dx)
+ 8c3:	2c 20                	sub    $0x20,%al
+ 8c5:	49                   	dec    %ecx
+ 8c6:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 8c9:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 8cc:	75 72                	jne    940 <.rodata+0x940>
+ 8ce:	20 6b 65             	and    %ch,0x65(%ebx)
+ 8d1:	72 6e                	jb     941 <.rodata+0x941>
+ 8d3:	65 6c                	gs insb (%dx),%es:(%edi)
+ 8d5:	20 77 72             	and    %dh,0x72(%edi)
+ 8d8:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 8df:	79 
+ 8e0:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 8e3:	75 21                	jne    906 <.rodata+0x906>
+ 8e5:	2f                   	das    
+ 8e6:	2f                   	das    
+ 8e7:	2f                   	das    
+ 8e8:	2f                   	das    
+ 8e9:	2f                   	das    
+ 8ea:	2f                   	das    
+ 8eb:	2f                   	das    
+ 8ec:	2f                   	das    
+ 8ed:	2f                   	das    
+ 8ee:	2f                   	das    
+ 8ef:	2f                   	das    
+ 8f0:	2f                   	das    
+ 8f1:	2f                   	das    
+ 8f2:	2f                   	das    
+ 8f3:	2f                   	das    
+ 8f4:	2f                   	das    
+ 8f5:	2f                   	das    
+ 8f6:	48                   	dec    %eax
+ 8f7:	65 6c                	gs insb (%dx),%es:(%edi)
+ 8f9:	6c                   	insb   (%dx),%es:(%edi)
+ 8fa:	6f                   	outsl  %ds:(%esi),(%dx)
+ 8fb:	20 73 69             	and    %dh,0x69(%ebx)
+ 8fe:	74 61                	je     961 <.rodata+0x961>
+ 900:	6e                   	outsb  %ds:(%esi),(%dx)
+ 901:	2c 20                	sub    $0x20,%al
+ 903:	49                   	dec    %ecx
+ 904:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 907:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 90a:	75 72                	jne    97e <.rodata+0x97e>
+ 90c:	20 6b 65             	and    %ch,0x65(%ebx)
+ 90f:	72 6e                	jb     97f <.rodata+0x97f>
+ 911:	65 6c                	gs insb (%dx),%es:(%edi)
+ 913:	20 77 72             	and    %dh,0x72(%edi)
+ 916:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 91d:	79 
+ 91e:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 921:	75 21                	jne    944 <.rodata+0x944>
+ 923:	2f                   	das    
+ 924:	2f                   	das    
+ 925:	2f                   	das    
+ 926:	2f                   	das    
+ 927:	2f                   	das    
+ 928:	2f                   	das    
+ 929:	2f                   	das    
+ 92a:	2f                   	das    
+ 92b:	2f                   	das    
+ 92c:	2f                   	das    
+ 92d:	2f                   	das    
+ 92e:	2f                   	das    
+ 92f:	2f                   	das    
+ 930:	2f                   	das    
+ 931:	2f                   	das    
+ 932:	2f                   	das    
+ 933:	2f                   	das    
+ 934:	48                   	dec    %eax
+ 935:	65 6c                	gs insb (%dx),%es:(%edi)
+ 937:	6c                   	insb   (%dx),%es:(%edi)
+ 938:	6f                   	outsl  %ds:(%esi),(%dx)
+ 939:	20 73 69             	and    %dh,0x69(%ebx)
+ 93c:	74 61                	je     99f <.rodata+0x99f>
+ 93e:	6e                   	outsb  %ds:(%esi),(%dx)
+ 93f:	2c 20                	sub    $0x20,%al
+ 941:	49                   	dec    %ecx
+ 942:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 945:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 948:	75 72                	jne    9bc <.rodata+0x9bc>
+ 94a:	20 6b 65             	and    %ch,0x65(%ebx)
+ 94d:	72 6e                	jb     9bd <.rodata+0x9bd>
+ 94f:	65 6c                	gs insb (%dx),%es:(%edi)
+ 951:	20 77 72             	and    %dh,0x72(%edi)
+ 954:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 95b:	79 
+ 95c:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 95f:	75 21                	jne    982 <.rodata+0x982>
+ 961:	2f                   	das    
+ 962:	2f                   	das    
+ 963:	2f                   	das    
+ 964:	2f                   	das    
+ 965:	2f                   	das    
+ 966:	2f                   	das    
+ 967:	2f                   	das    
+ 968:	2f                   	das    
+ 969:	2f                   	das    
+ 96a:	2f                   	das    
+ 96b:	2f                   	das    
+ 96c:	2f                   	das    
+ 96d:	2f                   	das    
+ 96e:	2f                   	das    
+ 96f:	2f                   	das    
+ 970:	2f                   	das    
+ 971:	2f                   	das    
+ 972:	48                   	dec    %eax
+ 973:	65 6c                	gs insb (%dx),%es:(%edi)
+ 975:	6c                   	insb   (%dx),%es:(%edi)
+ 976:	6f                   	outsl  %ds:(%esi),(%dx)
+ 977:	20 73 69             	and    %dh,0x69(%ebx)
+ 97a:	74 61                	je     9dd <.rodata+0x9dd>
+ 97c:	6e                   	outsb  %ds:(%esi),(%dx)
+ 97d:	2c 20                	sub    $0x20,%al
+ 97f:	49                   	dec    %ecx
+ 980:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 983:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 986:	75 72                	jne    9fa <.rodata+0x9fa>
+ 988:	20 6b 65             	and    %ch,0x65(%ebx)
+ 98b:	72 6e                	jb     9fb <.rodata+0x9fb>
+ 98d:	65 6c                	gs insb (%dx),%es:(%edi)
+ 98f:	20 77 72             	and    %dh,0x72(%edi)
+ 992:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 999:	79 
+ 99a:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 99d:	75 21                	jne    9c0 <.rodata+0x9c0>
+ 99f:	2f                   	das    
+ 9a0:	2f                   	das    
+ 9a1:	2f                   	das    
+ 9a2:	2f                   	das    
+ 9a3:	2f                   	das    
+ 9a4:	2f                   	das    
+ 9a5:	2f                   	das    
+ 9a6:	2f                   	das    
+ 9a7:	2f                   	das    
+ 9a8:	2f                   	das    
+ 9a9:	2f                   	das    
+ 9aa:	2f                   	das    
+ 9ab:	2f                   	das    
+ 9ac:	2f                   	das    
+ 9ad:	2f                   	das    
+ 9ae:	2f                   	das    
+ 9af:	2f                   	das    
+ 9b0:	48                   	dec    %eax
+ 9b1:	65 6c                	gs insb (%dx),%es:(%edi)
+ 9b3:	6c                   	insb   (%dx),%es:(%edi)
+ 9b4:	6f                   	outsl  %ds:(%esi),(%dx)
+ 9b5:	20 73 69             	and    %dh,0x69(%ebx)
+ 9b8:	74 61                	je     a1b <.rodata+0xa1b>
+ 9ba:	6e                   	outsb  %ds:(%esi),(%dx)
+ 9bb:	2c 20                	sub    $0x20,%al
+ 9bd:	49                   	dec    %ecx
+ 9be:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 9c1:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 9c4:	75 72                	jne    a38 <.rodata+0xa38>
+ 9c6:	20 6b 65             	and    %ch,0x65(%ebx)
+ 9c9:	72 6e                	jb     a39 <.rodata+0xa39>
+ 9cb:	65 6c                	gs insb (%dx),%es:(%edi)
+ 9cd:	20 77 72             	and    %dh,0x72(%edi)
+ 9d0:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ 9d7:	79 
+ 9d8:	20 79 6f             	and    %bh,0x6f(%ecx)
+ 9db:	75 21                	jne    9fe <.rodata+0x9fe>
+ 9dd:	2f                   	das    
+ 9de:	2f                   	das    
+ 9df:	2f                   	das    
+ 9e0:	2f                   	das    
+ 9e1:	2f                   	das    
+ 9e2:	2f                   	das    
+ 9e3:	2f                   	das    
+ 9e4:	2f                   	das    
+ 9e5:	2f                   	das    
+ 9e6:	2f                   	das    
+ 9e7:	2f                   	das    
+ 9e8:	2f                   	das    
+ 9e9:	2f                   	das    
+ 9ea:	2f                   	das    
+ 9eb:	2f                   	das    
+ 9ec:	2f                   	das    
+ 9ed:	2f                   	das    
+ 9ee:	48                   	dec    %eax
+ 9ef:	65 6c                	gs insb (%dx),%es:(%edi)
+ 9f1:	6c                   	insb   (%dx),%es:(%edi)
+ 9f2:	6f                   	outsl  %ds:(%esi),(%dx)
+ 9f3:	20 73 69             	and    %dh,0x69(%ebx)
+ 9f6:	74 61                	je     a59 <.rodata+0xa59>
+ 9f8:	6e                   	outsb  %ds:(%esi),(%dx)
+ 9f9:	2c 20                	sub    $0x20,%al
+ 9fb:	49                   	dec    %ecx
+ 9fc:	20 61 6d             	and    %ah,0x6d(%ecx)
+ 9ff:	20 79 6f             	and    %bh,0x6f(%ecx)
+ a02:	75 72                	jne    a76 <.rodata+0xa76>
+ a04:	20 6b 65             	and    %ch,0x65(%ebx)
+ a07:	72 6e                	jb     a77 <.rodata+0xa77>
+ a09:	65 6c                	gs insb (%dx),%es:(%edi)
+ a0b:	20 77 72             	and    %dh,0x72(%edi)
+ a0e:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ a15:	79 
+ a16:	20 79 6f             	and    %bh,0x6f(%ecx)
+ a19:	75 21                	jne    a3c <.rodata+0xa3c>
+ a1b:	2f                   	das    
+ a1c:	2f                   	das    
+ a1d:	2f                   	das    
+ a1e:	2f                   	das    
+ a1f:	2f                   	das    
+ a20:	2f                   	das    
+ a21:	2f                   	das    
+ a22:	2f                   	das    
+ a23:	2f                   	das    
+ a24:	2f                   	das    
+ a25:	2f                   	das    
+ a26:	2f                   	das    
+ a27:	2f                   	das    
+ a28:	2f                   	das    
+ a29:	2f                   	das    
+ a2a:	2f                   	das    
+ a2b:	2f                   	das    
+ a2c:	48                   	dec    %eax
+ a2d:	65 6c                	gs insb (%dx),%es:(%edi)
+ a2f:	6c                   	insb   (%dx),%es:(%edi)
+ a30:	6f                   	outsl  %ds:(%esi),(%dx)
+ a31:	20 73 69             	and    %dh,0x69(%ebx)
+ a34:	74 61                	je     a97 <.rodata+0xa97>
+ a36:	6e                   	outsb  %ds:(%esi),(%dx)
+ a37:	2c 20                	sub    $0x20,%al
+ a39:	49                   	dec    %ecx
+ a3a:	20 61 6d             	and    %ah,0x6d(%ecx)
+ a3d:	20 79 6f             	and    %bh,0x6f(%ecx)
+ a40:	75 72                	jne    ab4 <.rodata+0xab4>
+ a42:	20 6b 65             	and    %ch,0x65(%ebx)
+ a45:	72 6e                	jb     ab5 <.rodata+0xab5>
+ a47:	65 6c                	gs insb (%dx),%es:(%edi)
+ a49:	20 77 72             	and    %dh,0x72(%edi)
+ a4c:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ a53:	79 
+ a54:	20 79 6f             	and    %bh,0x6f(%ecx)
+ a57:	75 21                	jne    a7a <.rodata+0xa7a>
+ a59:	2f                   	das    
+ a5a:	2f                   	das    
+ a5b:	2f                   	das    
+ a5c:	2f                   	das    
+ a5d:	2f                   	das    
+ a5e:	2f                   	das    
+ a5f:	2f                   	das    
+ a60:	2f                   	das    
+ a61:	2f                   	das    
+ a62:	2f                   	das    
+ a63:	2f                   	das    
+ a64:	2f                   	das    
+ a65:	2f                   	das    
+ a66:	2f                   	das    
+ a67:	2f                   	das    
+ a68:	2f                   	das    
+ a69:	2f                   	das    
+ a6a:	48                   	dec    %eax
+ a6b:	65 6c                	gs insb (%dx),%es:(%edi)
+ a6d:	6c                   	insb   (%dx),%es:(%edi)
+ a6e:	6f                   	outsl  %ds:(%esi),(%dx)
+ a6f:	20 73 69             	and    %dh,0x69(%ebx)
+ a72:	74 61                	je     ad5 <.rodata+0xad5>
+ a74:	6e                   	outsb  %ds:(%esi),(%dx)
+ a75:	2c 20                	sub    $0x20,%al
+ a77:	49                   	dec    %ecx
+ a78:	20 61 6d             	and    %ah,0x6d(%ecx)
+ a7b:	20 79 6f             	and    %bh,0x6f(%ecx)
+ a7e:	75 72                	jne    af2 <.rodata+0xaf2>
+ a80:	20 6b 65             	and    %ch,0x65(%ebx)
+ a83:	72 6e                	jb     af3 <.rodata+0xaf3>
+ a85:	65 6c                	gs insb (%dx),%es:(%edi)
+ a87:	20 77 72             	and    %dh,0x72(%edi)
+ a8a:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ a91:	79 
+ a92:	20 79 6f             	and    %bh,0x6f(%ecx)
+ a95:	75 21                	jne    ab8 <.rodata+0xab8>
+ a97:	2f                   	das    
+ a98:	2f                   	das    
+ a99:	2f                   	das    
+ a9a:	2f                   	das    
+ a9b:	2f                   	das    
+ a9c:	2f                   	das    
+ a9d:	2f                   	das    
+ a9e:	2f                   	das    
+ a9f:	2f                   	das    
+ aa0:	2f                   	das    
+ aa1:	2f                   	das    
+ aa2:	2f                   	das    
+ aa3:	2f                   	das    
+ aa4:	2f                   	das    
+ aa5:	2f                   	das    
+ aa6:	2f                   	das    
+ aa7:	2f                   	das    
+ aa8:	48                   	dec    %eax
+ aa9:	65 6c                	gs insb (%dx),%es:(%edi)
+ aab:	6c                   	insb   (%dx),%es:(%edi)
+ aac:	6f                   	outsl  %ds:(%esi),(%dx)
+ aad:	20 73 69             	and    %dh,0x69(%ebx)
+ ab0:	74 61                	je     b13 <.rodata+0xb13>
+ ab2:	6e                   	outsb  %ds:(%esi),(%dx)
+ ab3:	2c 20                	sub    $0x20,%al
+ ab5:	49                   	dec    %ecx
+ ab6:	20 61 6d             	and    %ah,0x6d(%ecx)
+ ab9:	20 79 6f             	and    %bh,0x6f(%ecx)
+ abc:	75 72                	jne    b30 <.rodata+0xb30>
+ abe:	20 6b 65             	and    %ch,0x65(%ebx)
+ ac1:	72 6e                	jb     b31 <.rodata+0xb31>
+ ac3:	65 6c                	gs insb (%dx),%es:(%edi)
+ ac5:	20 77 72             	and    %dh,0x72(%edi)
+ ac8:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ acf:	79 
+ ad0:	20 79 6f             	and    %bh,0x6f(%ecx)
+ ad3:	75 21                	jne    af6 <.rodata+0xaf6>
+ ad5:	2f                   	das    
+ ad6:	2f                   	das    
+ ad7:	2f                   	das    
+ ad8:	2f                   	das    
+ ad9:	2f                   	das    
+ ada:	2f                   	das    
+ adb:	2f                   	das    
+ adc:	2f                   	das    
+ add:	2f                   	das    
+ ade:	2f                   	das    
+ adf:	2f                   	das    
+ ae0:	2f                   	das    
+ ae1:	2f                   	das    
+ ae2:	2f                   	das    
+ ae3:	2f                   	das    
+ ae4:	2f                   	das    
+ ae5:	2f                   	das    
+ ae6:	48                   	dec    %eax
+ ae7:	65 6c                	gs insb (%dx),%es:(%edi)
+ ae9:	6c                   	insb   (%dx),%es:(%edi)
+ aea:	6f                   	outsl  %ds:(%esi),(%dx)
+ aeb:	20 73 69             	and    %dh,0x69(%ebx)
+ aee:	74 61                	je     b51 <.rodata+0xb51>
+ af0:	6e                   	outsb  %ds:(%esi),(%dx)
+ af1:	2c 20                	sub    $0x20,%al
+ af3:	49                   	dec    %ecx
+ af4:	20 61 6d             	and    %ah,0x6d(%ecx)
+ af7:	20 79 6f             	and    %bh,0x6f(%ecx)
+ afa:	75 72                	jne    b6e <.rodata+0xb6e>
+ afc:	20 6b 65             	and    %ch,0x65(%ebx)
+ aff:	72 6e                	jb     b6f <.rodata+0xb6f>
+ b01:	65 6c                	gs insb (%dx),%es:(%edi)
+ b03:	20 77 72             	and    %dh,0x72(%edi)
+ b06:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ b0d:	79 
+ b0e:	20 79 6f             	and    %bh,0x6f(%ecx)
+ b11:	75 21                	jne    b34 <.rodata+0xb34>
+ b13:	2f                   	das    
+ b14:	2f                   	das    
+ b15:	2f                   	das    
+ b16:	2f                   	das    
+ b17:	2f                   	das    
+ b18:	2f                   	das    
+ b19:	2f                   	das    
+ b1a:	2f                   	das    
+ b1b:	2f                   	das    
+ b1c:	2f                   	das    
+ b1d:	2f                   	das    
+ b1e:	2f                   	das    
+ b1f:	2f                   	das    
+ b20:	2f                   	das    
+ b21:	2f                   	das    
+ b22:	2f                   	das    
+ b23:	2f                   	das    
+ b24:	48                   	dec    %eax
+ b25:	65 6c                	gs insb (%dx),%es:(%edi)
+ b27:	6c                   	insb   (%dx),%es:(%edi)
+ b28:	6f                   	outsl  %ds:(%esi),(%dx)
+ b29:	20 73 69             	and    %dh,0x69(%ebx)
+ b2c:	74 61                	je     b8f <.rodata+0xb8f>
+ b2e:	6e                   	outsb  %ds:(%esi),(%dx)
+ b2f:	2c 20                	sub    $0x20,%al
+ b31:	49                   	dec    %ecx
+ b32:	20 61 6d             	and    %ah,0x6d(%ecx)
+ b35:	20 79 6f             	and    %bh,0x6f(%ecx)
+ b38:	75 72                	jne    bac <.rodata+0xbac>
+ b3a:	20 6b 65             	and    %ch,0x65(%ebx)
+ b3d:	72 6e                	jb     bad <.rodata+0xbad>
+ b3f:	65 6c                	gs insb (%dx),%es:(%edi)
+ b41:	20 77 72             	and    %dh,0x72(%edi)
+ b44:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ b4b:	79 
+ b4c:	20 79 6f             	and    %bh,0x6f(%ecx)
+ b4f:	75 21                	jne    b72 <.rodata+0xb72>
+ b51:	2f                   	das    
+ b52:	2f                   	das    
+ b53:	2f                   	das    
+ b54:	2f                   	das    
+ b55:	2f                   	das    
+ b56:	2f                   	das    
+ b57:	2f                   	das    
+ b58:	2f                   	das    
+ b59:	2f                   	das    
+ b5a:	2f                   	das    
+ b5b:	2f                   	das    
+ b5c:	2f                   	das    
+ b5d:	2f                   	das    
+ b5e:	2f                   	das    
+ b5f:	2f                   	das    
+ b60:	2f                   	das    
+ b61:	2f                   	das    
+ b62:	48                   	dec    %eax
+ b63:	65 6c                	gs insb (%dx),%es:(%edi)
+ b65:	6c                   	insb   (%dx),%es:(%edi)
+ b66:	6f                   	outsl  %ds:(%esi),(%dx)
+ b67:	20 73 69             	and    %dh,0x69(%ebx)
+ b6a:	74 61                	je     bcd <.rodata+0xbcd>
+ b6c:	6e                   	outsb  %ds:(%esi),(%dx)
+ b6d:	2c 20                	sub    $0x20,%al
+ b6f:	49                   	dec    %ecx
+ b70:	20 61 6d             	and    %ah,0x6d(%ecx)
+ b73:	20 79 6f             	and    %bh,0x6f(%ecx)
+ b76:	75 72                	jne    bea <kernelMain+0xb74>
+ b78:	20 6b 65             	and    %ch,0x65(%ebx)
+ b7b:	72 6e                	jb     beb <kernelMain+0xb75>
+ b7d:	65 6c                	gs insb (%dx),%es:(%edi)
+ b7f:	20 77 72             	and    %dh,0x72(%edi)
+ b82:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ b89:	79 
+ b8a:	20 79 6f             	and    %bh,0x6f(%ecx)
+ b8d:	75 21                	jne    bb0 <.rodata+0xbb0>
+ b8f:	2f                   	das    
+ b90:	2f                   	das    
+ b91:	2f                   	das    
+ b92:	2f                   	das    
+ b93:	2f                   	das    
+ b94:	2f                   	das    
+ b95:	2f                   	das    
+ b96:	2f                   	das    
+ b97:	2f                   	das    
+ b98:	2f                   	das    
+ b99:	2f                   	das    
+ b9a:	2f                   	das    
+ b9b:	2f                   	das    
+ b9c:	2f                   	das    
+ b9d:	2f                   	das    
+ b9e:	2f                   	das    
+ b9f:	2f                   	das    
+ ba0:	48                   	dec    %eax
+ ba1:	65 6c                	gs insb (%dx),%es:(%edi)
+ ba3:	6c                   	insb   (%dx),%es:(%edi)
+ ba4:	6f                   	outsl  %ds:(%esi),(%dx)
+ ba5:	20 73 69             	and    %dh,0x69(%ebx)
+ ba8:	74 61                	je     c0b <kernelMain+0xb95>
+ baa:	6e                   	outsb  %ds:(%esi),(%dx)
+ bab:	2c 20                	sub    $0x20,%al
+ bad:	49                   	dec    %ecx
+ bae:	20 61 6d             	and    %ah,0x6d(%ecx)
+ bb1:	20 79 6f             	and    %bh,0x6f(%ecx)
+ bb4:	75 72                	jne    c28 <kernelMain+0xbb2>
+ bb6:	20 6b 65             	and    %ch,0x65(%ebx)
+ bb9:	72 6e                	jb     c29 <kernelMain+0xbb3>
+ bbb:	65 6c                	gs insb (%dx),%es:(%edi)
+ bbd:	20 77 72             	and    %dh,0x72(%edi)
+ bc0:	69 74 74 65 6e 20 62 	imul   $0x7962206e,0x65(%esp,%esi,2),%esi
+ bc7:	79 
+ bc8:	20 79 6f             	and    %bh,0x6f(%ecx)
+ bcb:	75 21                	jne    bee <kernelMain+0xb78>
+ bcd:	2f                   	das    
+ bce:	2f                   	das    
+ bcf:	2f                   	das    
+ bd0:	2f                   	das    
+ bd1:	2f                   	das    
+ bd2:	2f                   	das    
+ bd3:	2f                   	das    
+ bd4:	2f                   	das    
+ bd5:	2f                   	das    
+ bd6:	2f                   	das    
+ bd7:	2f                   	das    
+ bd8:	2f                   	das    
+ bd9:	2f                   	das    
+ bda:	2f                   	das    
+ bdb:	2f                   	das    
+ bdc:	2f                   	das    
+ bdd:	2f                   	das    
+	...
+
+Disassembly of section .text.__x86.get_pc_thunk.ax:
+
+00000000 <__x86.get_pc_thunk.ax>:
+   0:	8b 04 24             	mov    (%esp),%eax
+   3:	c3                   	ret    
+
+Disassembly of section .text.__x86.get_pc_thunk.bx:
+
+00000000 <__x86.get_pc_thunk.bx>:
+   0:	8b 1c 24             	mov    (%esp),%ebx
+   3:	c3                   	ret    
+
+Disassembly of section .comment:
+
+00000000 <.comment>:
+   0:	00 47 43             	add    %al,0x43(%edi)
+   3:	43                   	inc    %ebx
+   4:	3a 20                	cmp    (%eax),%ah
+   6:	28 55 62             	sub    %dl,0x62(%ebp)
+   9:	75 6e                	jne    79 <kernelMain+0x3>
+   b:	74 75                	je     82 <kernelMain+0xc>
+   d:	20 39                	and    %bh,(%ecx)
+   f:	2e 33 2e             	xor    %cs:(%esi),%ebp
+  12:	30 2d 31 37 75 62    	xor    %ch,0x62753731
+  18:	75 6e                	jne    88 <kernelMain+0x12>
+  1a:	74 75                	je     91 <kernelMain+0x1b>
+  1c:	31 7e 32             	xor    %edi,0x32(%esi)
+  1f:	30 2e                	xor    %ch,(%esi)
+  21:	30 34 29             	xor    %dh,(%ecx,%ebp,1)
+  24:	20 39                	and    %bh,(%ecx)
+  26:	2e 33 2e             	xor    %cs:(%esi),%ebp
+  29:	30 00                	xor    %al,(%eax)
+
+Disassembly of section .note.gnu.property:
+
+00000000 <.note.gnu.property>:
+   0:	04 00                	add    $0x0,%al
+   2:	00 00                	add    %al,(%eax)
+   4:	0c 00                	or     $0x0,%al
+   6:	00 00                	add    %al,(%eax)
+   8:	05 00 00 00 47       	add    $0x47000000,%eax
+   d:	4e                   	dec    %esi
+   e:	55                   	push   %ebp
+   f:	00 02                	add    %al,(%edx)
+  11:	00 00                	add    %al,(%eax)
+  13:	c0 04 00 00          	rolb   $0x0,(%eax,%eax,1)
+  17:	00 03                	add    %al,(%ebx)
+  19:	00 00                	add    %al,(%eax)
+	...
+
+Disassembly of section .eh_frame:
+
+00000000 <.eh_frame>:
+   0:	14 00                	adc    $0x0,%al
+   2:	00 00                	add    %al,(%eax)
+   4:	00 00                	add    %al,(%eax)
+   6:	00 00                	add    %al,(%eax)
+   8:	01 7a 52             	add    %edi,0x52(%edx)
+   b:	00 01                	add    %al,(%ecx)
+   d:	7c 08                	jl     17 <.eh_frame+0x17>
+   f:	01 1b                	add    %ebx,(%ebx)
+  11:	0c 04                	or     $0x4,%al
+  13:	04 88                	add    $0x88,%al
+  15:	01 00                	add    %eax,(%eax)
+  17:	00 20                	add    %ah,(%eax)
+  19:	00 00                	add    %al,(%eax)
+  1b:	00 1c 00             	add    %bl,(%eax,%eax,1)
+  1e:	00 00                	add    %al,(%eax)
+  20:	00 00                	add    %al,(%eax)
+  22:	00 00                	add    %al,(%eax)
+  24:	76 00                	jbe    26 <.eh_frame+0x26>
+  26:	00 00                	add    %al,(%eax)
+  28:	00 45 0e             	add    %al,0xe(%ebp)
+  2b:	08 85 02 42 0d 05    	or     %al,0x50d4202(%ebp)
+  31:	44                   	inc    %esp
+  32:	83 03 02             	addl   $0x2,(%ebx)
+  35:	69 c3 41 c5 0c 04    	imul   $0x40cc541,%ebx,%eax
+  3b:	04 18                	add    $0x18,%al
+  3d:	00 00                	add    %al,(%eax)
+  3f:	00 40 00             	add    %al,0x0(%eax)
+  42:	00 00                	add    %al,(%eax)
+  44:	76 00                	jbe    46 <.eh_frame+0x46>
+  46:	00 00                	add    %al,(%eax)
+  48:	24 00                	and    $0x0,%al
+  4a:	00 00                	add    %al,(%eax)
+  4c:	00 45 0e             	add    %al,0xe(%ebp)
+  4f:	08 85 02 42 0d 05    	or     %al,0x50d4202(%ebp)
+  55:	41                   	inc    %ecx
+  56:	83 03 10             	addl   $0x10,(%ebx)
+  59:	00 00                	add    %al,(%eax)
+  5b:	00 5c 00 00          	add    %bl,0x0(%eax,%eax,1)
+  5f:	00 00                	add    %al,(%eax)
+  61:	00 00                	add    %al,(%eax)
+  63:	00 04 00             	add    %al,(%eax,%eax,1)
+  66:	00 00                	add    %al,(%eax)
+  68:	00 00                	add    %al,(%eax)
+  6a:	00 00                	add    %al,(%eax)
+  6c:	10 00                	adc    %al,(%eax)
+  6e:	00 00                	add    %al,(%eax)
+  70:	70 00                	jo     72 <.eh_frame+0x72>
+  72:	00 00                	add    %al,(%eax)
+  74:	00 00                	add    %al,(%eax)
+  76:	00 00                	add    %al,(%eax)
+  78:	04 00                	add    $0x0,%al
+  7a:	00 00                	add    %al,(%eax)
+  7c:	00 00                	add    %al,(%eax)
+	...

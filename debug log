@@ -1,0 +1,11 @@
+debug log 
+0xb800 check
+
+write code(kernel.cpp loader.s) ->gcc and asm asm wrong??(kernel.o loader.o) -> linker kernel.bin.
+power on bios ->ram, pc -> bootloader -> generate list ->select list booot
+
+I can not see any output from my computer after bootup, and I used the grub-file to check if /boot/mykernel.bin meets the requirements
+and I believe the system runs my code, because there seems to be a little difference between with whil(1) and without it. Further, I thcekc
+the website Printing_To_Screen https://wiki.osdev.org/Printing_To_Screen. It tells me that, it is probably because of my laptop lake of support
+on the 80*25 video mode.Fruterh, its node only support uefi but not bios. For bios, the vga text mode is not suppported anymore
+this one seems due to the probem

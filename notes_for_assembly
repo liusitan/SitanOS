@@ -1,0 +1,17 @@
+Notes for assembly
+Assembly language is converted into executable machine code by a utility program referred to as an assembler like NASM, MASM, etc
+assembler turn assembly code to machine code. 
+
+data section:
+The data section is used for declaring initialized data or constants. This data does not change at runtime. You can declare various constant values, file names, or buffer size, etc., in this section.
+
+
+bss section: 
+The bss section is used for declaring variables. The syntax for declaring bss section is −
+
+
+text section: 
+This section must begin with the declaration global _start, which tells the kernel where the program execution begins.
+
+.space
+This directive emits size bytes, each of value fill. Both size and fill are absolute expressions. If the comma and fill are omitted, fill is assumed to be zero.
